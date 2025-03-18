@@ -10,7 +10,7 @@ const Login = () => {
   const SigninwithEmail=async()=>{
     try {
       await signinwithEmail(email,password)
-      toastMessage("Logout successfully");
+      toastMessage("Welcome to admin","success");
       setEmail("")
       setPassword("")
       navigate("/dashboard")

@@ -8,7 +8,7 @@ const MainDashboardpage = () => {
   const Signout =async()=>{
      await signout()
      navigate("/")
-     toastMessage("Welcome to admin");
+     toastMessage("Logout successfully");
   }
   return (
     <div className='flex justify-center items-center my-5'>
