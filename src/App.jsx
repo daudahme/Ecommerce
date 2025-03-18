@@ -8,7 +8,7 @@ import { auth } from './Context/UseFireBase';
 const App = () => {
   const [user, loading] = useAuthState(auth);
 
-  if (loading) return <p>Loading...........</p>;
+  if (loading) return <p className='flex justify-center items-center text-4xl my-56'>Loading...........</p>;
 
   return (
     <div className="flex justify-center items-center bg-blue-50">
