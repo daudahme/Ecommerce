@@ -41,7 +41,7 @@ const Stylishlogin = () => {
       </div>
       <div className='mb-4'> 
       <fieldset className="fieldset">
-  <legend className="fieldset-legend">Email</legend>
+  <legend className="fieldset-legend text-sm">Email</legend>
   <input type="text" className="input w-full focus:outline focus:outline-blue-400 border-2 border-blue-200 hover:bg-blue-50" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
 </fieldset>
       </div>
