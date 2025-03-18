@@ -42,7 +42,7 @@ const Stylishlogin = () => {
       <div className='mb-4'> 
       <fieldset className="fieldset">
   <legend className="fieldset-legend">Email</legend>
-  <input type="text" className="input w-full" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+  <input type="text" className="input w-full focus:outline focus:outline-blue-400 border-2 border-blue-200 hover:bg-blue-50" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
 </fieldset>
       </div>
       <div>
@@ -51,7 +51,7 @@ const Stylishlogin = () => {
       
       <div className="relative">
       <legend className="fieldset-legend">Password</legend>
-      <input   type={showPassword ? "text" : "password"} className="input w-full" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+      <input   type={showPassword ? "text" : "password"} className="input w-full  hover:bg-blue-50 border-2 border-blue-200 focus:outline focus:outline-blue-400" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
 
         {/* Eye Icon inside input field */}
         <span
