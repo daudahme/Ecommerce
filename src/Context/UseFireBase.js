@@ -20,7 +20,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 
 
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 export const signinwithEmail =async(email,password)=>{
     await signInWithEmailAndPassword(auth,email,password)
@@ -29,6 +29,6 @@ export const signinwithEmail =async(email,password)=>{
 
 export const signout =async()=>{
   await  signOut(auth)
-
+  console.log("signout")
 
 }

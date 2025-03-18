@@ -1,18 +1,26 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Login from './pages/Login'
-import MainDashboardpage from './pages/MainDashboardpage'
+import React from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import Login from './pages/Login';
+import MainDashboardpage from './pages/MainDashboardpage';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from './Context/UseFireBase';
 
 const App = () => {
-  return (
-    <div className=''>
-     
-  <Routes>
-    <Route path='/' element={<div className='flex justify-center items-center bg-blue-50'><Login/></div>}/>
-    <Route path='/dashboard' element={<MainDashboardpage/>}/>
-  </Routes>
-    </div>
-  )
-}
+  const [user, loading] = useAuthState(auth);
 
-export default App
+  if (loading) return <p>Loading...........</p>;
+
+  return (
+    <div className="flex justify-center items-center bg-blue-50">
+      <Routes>
+        {/* Redirect to Dashboard if user is logged in, otherwise show Login */}
+        <Route path="/" element={user ? <Navigate to="/dashboard" /> : <Login />} />
+
+        {/* Protected Route: Only logged-in users can access Dashboard */}
+        <Route path="/dashboard" element={user ? <MainDashboardpage /> : <Navigate to="/" />} />
+      </Routes>
+    </div>
+  );
+};
+
+export default App;
