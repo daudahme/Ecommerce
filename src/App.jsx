@@ -3,8 +3,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import MainDashboardpage from './pages/MainDashboardpage';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from './Context/UseFireBase';
-import Stylishlogin from './pages/Stylishlogin';
-import ResponsiveForm from './pages/responsiveForm';
+import ResponsiveForm from './pages/ResponsiveForm';
 
 const App = () => {
   const [user, loading] = useAuthState(auth);
@@ -14,10 +13,7 @@ const App = () => {
   return (
     <div className=" ">
       <Routes>
-        {/* Redirect to Dashboard if user is logged in, otherwise show Login */}
         <Route path="/" element={user ? <Navigate to="/dashboard" /> : <ResponsiveForm />} />
-
-        {/* Protected Route: Only logged-in users can access Dashboard */}
         <Route path="/dashboard" element={user ? <MainDashboardpage /> : <Navigate to="/" />} />
    
        
