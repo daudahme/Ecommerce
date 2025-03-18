@@ -27,6 +27,8 @@ const Stylishlogin = () => {
     };
   return (
     <div className='flex justify-between items-center gap-80'>
+        <div className='w-[50%]'>
+
      <div className='form border-blue-300 border-2 shadow-2xl w-[420px] rounded-2xl ml-72 '>
         <div className='pt-16 pl-16 pr-96  text-2xl text-blue-500 font-bold '>
             Ecommerce
@@ -77,7 +79,8 @@ const Stylishlogin = () => {
       </div>
         </div>
      </div>
-     <div className='right'>
+        </div>
+     <div className='right w-[50%]'>
         <div className='bg-blue-200 w-[600px] h-screen ml-52  '>
           
         </div>
